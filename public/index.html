@@ -15,19 +15,17 @@
 
                 // Loop through the list of image names and create a new element for each one
                 data.forEach(imageName => {
-                    const image = document.createElement('div');
-                    image.innerHTML = imageName;
-                    const downloadButton = document.createElement('button');
-                    downloadButton.innerHTML = "Download";
-                    downloadButton.addEventListener('click', function() {
-                        // code to download the image
-                        var link = document.createElement("a");
-                        link.href = "/images/" + imageName;
-                        link.download = imageName;
-                        link.click();
-                    });
-                    image.appendChild(downloadButton);
-                    imageList.appendChild(image);
+                    // change the format of the image name for display
+                    let displayImageName = imageName.replace(".myjpeg",".jpeg");
+                    // Create a new link element
+                    const link = document.createElement('a');
+                    link.href = '/upload/' + imageName;
+                    link.innerHTML = displayImageName;
+                    link.target = "_blank";
+                    imageList.appendChild(link);
+                    // Create a new line break element
+                    const lineBreak = document.createElement('br');
+                    imageList.appendChild(lineBreak);
                 });
             });
     </script>
