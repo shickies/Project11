@@ -39,7 +39,7 @@ app.post('/upload', (req, res) => {
     if (!image) return res.sendStatus(400);
 
     // Change the file extension to .myjpeg
-    image.name = image.name.substr(0, image.name.lastIndexOf(".")) + ".myjpeg";
+    // image.name = image.name.substr(0, image.name.lastIndexOf(".")) + ".myjpeg";
 
     // Move the uploaded image to upload folder
     // This is where the API call to the tier3 service will be made
