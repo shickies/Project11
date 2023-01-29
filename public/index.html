@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="image" />
+    <button type="submit">Upload</button>
+    <h3>List of images:</h3>
+    <div id="image-list"></div>
+
+    <script>
+        // Make a GET request to the /images endpoint
+        fetch('/images')
+            .then(response => response.json())
+            .then(data => {
+                // Get the image list element
+                const imageList = document.getElementById('image-list');
+
+                // Loop through the list of image names and create a new element for each one
+                data.forEach(imageName => {
+                    const image = document.createElement('div');
+                    image.innerHTML = imageName;
+                    const downloadButton = document.createElement('button');
+                    downloadButton.innerHTML = "Download";
+                    downloadButton.addEventListener('click', function() {
+                        // code to download the image
+                        var link = document.createElement("a");
+                        link.href = "/images/" + imageName;
+                        link.download = imageName;
+                        link.click();
+                    });
+                    image.appendChild(downloadButton);
+                    imageList.appendChild(image);
+                });
+            });
+    </script>
+</form>

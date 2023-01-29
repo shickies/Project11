@@ -1,0 +1,26 @@
+{
+  "name": "image-upload",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/z3301/image-upload.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/z3301/image-upload/issues"
+  },
+  "homepage": "https://github.com/z3301/image-upload#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "jimp": "^0.16.2",
+    "nodemon": "^2.0.20"
+  }
+}
